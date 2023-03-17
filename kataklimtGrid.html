@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>KatakLimit|Gridbox</title>
+        <link rel="icon" type="images/x-icon" href="IMG/Logo1.jpeg" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />  <!--CDN inclusion for favicon provider-->
+
+
+
+        <style>
+            *{
+                box-sizing: border-box;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            img
+            {
+                max-width: 100%;
+            }
+            body
+            { 
+                background-color: rgba(14, 14, 15, 0.745);
+            }  
+            #layout
+            {
+                width:90%;
+                margin: auto;
+            }
+            /*.row1,.row2,.row4,.row5, .row1I, .row2I, .row3, .r3colI,.r3colII,.r3colIII,.r3colIV,.about ,.photoshoot, .grpphoto,.description, .heartlist,.abtcolgrp*/
+            .Grid,.headergrid,.nav, .bannergrid, .welcomegrid,.Foliogrid, .foliocolI,.foliocolII,.foliocolIII,.foliocolIV,.footer,.bloggrid,.aboutgrid,.abtcolgrid,.heartlist,.description, .Photoshootgrid,.grpphotogrid
+            {
+                display:grid;
+            }
+
+            .headergrid, .footer
+            {
+                
+                grid-template-columns: 30% 70%;
+                background-color:white;
+                padding:10px 50px 0px 50px;
+                justify-content: right;
+            }
+            .bannergrid,.Foliogrid,.bloggrid,.footer
+            {
+                padding:20px 50px 20px 50px;
+            }
+            .bannerimg
+            {
+                padding: 20px 100px;
+                justify-content: center;
+            }
+            .welcomegrid
+            {
+                padding: 0px 100px 10px 100px;
+            }
+            .nav
+            {                
+                grid-template-columns: auto auto auto auto auto;
+                gap: 10px;
+                justify-content:right;
+                               
+            }
+            .nav >div
+            {
+                padding:20px;
+                text-align:center;
+                align-items: center;
+            }
+            #circle
+             {
+                align-items: center;
+                width: 75px;
+                height: 75px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                border-radius: 40px;
+                background: rgba(255, 68, 0, 0.766);
+                color:aliceblue;
+                justify-content: center;
+            }
+            .bannergrid
+            {
+                background-color: rgba(0, 0, 0, 0.756);
+                color: aliceblue;
+                row-gap: 30px;
+            }
+            .welcomegrid
+            {
+                grid-template-columns: 30% 70%;                
+                          
+            }
+
+            .welcome
+            {
+                text-align: center; 
+                font-size: xx-large;                
+            }
+            .welcome::first-letter, span
+            {
+                color:rgba(255, 68, 0, 0.766);
+            }
+            #wlcmtxt
+            {
+                border-style: none none none groove;
+                border-color:gray ;
+                padding-left: 20px;
+                font-size: small;
+                vertical-align: bottom;
+            }
+            .Foliogrid
+            {
+                grid-template-columns: 25% 25% 25% 25%;
+                
+                background-color: black;
+                
+            }
+            .colgrey,#colgrey
+            {
+                color: rgb(164, 155, 155);
+            }
+                 
+            .coltxt
+            {                
+                font-size: x-large;
+            }
+            .colprgh
+           {
+                font-size:small;
+           }
+           button
+           {
+             background-color: rgba(255, 68, 0, 0.766);
+             color: aliceblue;
+             height: 40px;
+             width: 100px;
+           }
+           .foliocolI,.foliocolII,.foliocolIII,.foliocolIV
+           {
+            row-gap: 20px;
+           }
+           
+           .bloggrid
+           {
+            grid-template-columns: 50% 50%;
+            column-gap: 50px;           
+           }
+           .aboutgrid
+           {
+            row-gap: 10px;
+           }
+           .abtcolgrid
+           {
+             grid-template-columns: 50% 50%;
+             
+           }
+           .description
+           {
+            padding-top: 10px;
+           }
+           
+           .heartlist
+           {
+            grid-template-columns: 50% 50%;
+           }
+            .heartlist div
+           {
+             
+             color:rgba(255, 68, 0, 0.766);
+             border-style: groove none none none;             
+             border-color: gray;
+           }
+
+           ul
+           {
+            color:rgba(255, 68, 0, 0.766);    
+            list-style-type: '❥';
+           }        
+           ul li
+           {
+            padding: 10px;
+           }
+           .grpphotogrid
+           {
+            grid-template-columns: repeat(4,1fr);
+           }
+           
+           .footer >div >i
+            {
+                width: 25px;
+                height:25px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                border-radius: 15px;
+                background: rgba(255, 68, 0, 0.766);
+                justify-content: center;
+                text-align: center;
+                color:aliceblue;
+            }    
+            @media only screen and (max-width: 576px)
+             {
+                .headergrid,.welcomegrid,.bloggrid,.abtcolgrid,.footer
+                {
+                    grid-template-columns: repeat(1,1fr);
+                    text-align: center;
+                }
+                #wlcmtxt
+                {
+                    border-style: groove none none none ;
+                    border-color:gray ;
+                    padding: 20px;
+                    text-align:left;
+                }
+                .Foliogrid,.grpphotogrid
+                {
+                    grid-template-columns: repeat(2,1fr);
+                    text-align: center;
+                    padding-top: 20px;
+                }
+                
+             }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="layout">
+            <div class="Grid" >
+                <div class="headergrid">
+                    <div class="logo">
+                        <img src="IMG/Logo1.jpeg" alt="logo" width="150px">
+                    </div>
+                    <div  class="nav">
+                        <div id="circle">About</div>
+                        <div >Services <br> &#8964;</div>
+                        <div>Folio</div>
+                        <div>Blog</div>
+                        <div>Contact</div>
+                    </div>
+                </div>
+                <div class="bannergrid" >
+                    <div class="bannerimg">
+                        <img src="IMG/kataklimt_banner.jpg" alt="Banner">
+                    </div>   
+                    <div class="welcomegrid" >
+                        <div class="welcome">
+                            Welcome&excl;
+                        </div>     
+                        <div id="wlcmtxt" class="colgrey">
+                            <span> Click here</span> &nbsp;for Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem rem ullam odit? Tenetur exercitationem 
+                            nam aut possimus obcaecati tempore laudantium voluptas! Non quisquam quae quaerat asperiores fugit reprehenderit consectetur labore.
+                        </div>           
+                    </div>
+                <div>
+                <div class="Foliogrid">
+                    <div class="foliocolI">
+                        <div class="coltxt">
+                            Fashion
+                        </div>
+                        <div >
+                            <img src="IMG/Fashion.jpg" alt="Fashion">
+                        </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>Lorem, ipsum dolor.</span> <br>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Facilis minima quis at illum reprehenderit a nulla.
+                        </div>
+                        <div >
+                            <button>Read More</button>
+                        </div>
+                    </div>
+                
+                    <div class="foliocolII">
+                        <div class="coltxt">
+                            Nature
+                        </div>
+                        <div >
+                            <img src="IMG/nature.jpg" alt="Nature">
+                        </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>Lorem, ipsum dolor.</span> <br>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Facilis minima quis at illum reprehenderit a nulla.
+                        </div>
+                        <div >
+                            <button>Read More</button>
+                        </div>
+                    </div>
+                    <div class="foliocolIII">
+                        <div class="coltxt" >
+                            Love Story
+                        </div>
+                        <div >
+                            <img src="IMG/lovestory.jpg" alt="Love Story">
+                    </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>Lorem, ipsum dolor.</span> <br>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            Facilis minima quis at illum reprehenderit a nulla. 
+                        </div>
+                        <div >
+                            <button>Read More</button>
+                        </div>
+                    </div>
+                    <div class="foliocolIV">
+                        <div class="coltxt">
+                            Fine Art
+                        </div>
+                        <div >
+                            <img src="IMG/man.jpg" alt="FineArt">
+                        </div>
+                        <div class="colprgh" id="colgrey">
+                            <span>Lorem, ipsum dolor.</span> <br>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Facilis minima quis at illum reprehenderit a nulla.
+                        </div>                
+                        <div >
+                            <button>Read More</button>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="bloggrid">
+                    <div class="aboutgrid">
+                        <div class="coltxt">
+                            Shortly About Me
+                        </div>
+                        <div class="abtcolgrid">
+                            <div> <img src="IMG/JeniLo.jpg" alt=""></div>
+                            <div class="description">
+                                <div> 
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Facilis minima quis at illum reprehenderit a nulla.
+                                </div>
+                                <div class="colgrey">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                    Facilis minima quis at illum reprehenderit a nulla.
+                                </div>
+                                <div class="heartlist">
+                                    <div>
+                                        <ul>
+                                            <li>item1</li>
+                                            <li>item1</li>
+                                            <li>item1</li>
+                                            <li>item1</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>item1</li>
+                                            <li>item1</li>
+                                            <li>item1</li>
+                                            <li>item1</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="Photoshootgrid">
+                        <div class="coltxt">
+                            Latest Photoshoots
+                        </div>
+                        <div class="grpphotogrid">
+                            <div><img src="IMG/photoshoot1.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot2.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot3.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot4.jpg" alt=""></div>
+                        
+                            <div><img src="IMG/photoshoot1.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot2.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot3.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot4.jpg" alt=""></div>
+                        
+                            <div><img src="IMG/photoshoot1.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot2.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot3.jpg" alt=""></div>
+                            <div><img src="IMG/photoshoot4.jpg" alt=""></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="footer" style="padding: 5px 50px; color:black">
+                    <div>&copy; CopyRight2023</div>
+                    <div style="text-align:right; padding-right: 50px;">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i> 
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>
